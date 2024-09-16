@@ -7,12 +7,12 @@
 size = Vector2(13, 7)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0edwf"]
-bg_color = Color(0.180392, 0.639216, 0.901961, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.290196, 0.427451, 0.878431, 0.827451)
+bg_color = Color(0.180392, 0.639216, 0.901961, 0.109804)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.089108, 0.157891, 0.426838, 0.909804)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -224,10 +224,11 @@ states/walk_rigth/position = Vector2(552, 161)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_xo5fc"), "idle", "walk_left", SubResource("AnimationNodeStateMachineTransition_anc5x"), "idle", "walk_rigth", SubResource("AnimationNodeStateMachineTransition_wjjt1"), "walk_rigth", "End", SubResource("AnimationNodeStateMachineTransition_oy1om"), "walk_left", "End", SubResource("AnimationNodeStateMachineTransition_e2flo"), "walk_left", "walk_rigth", SubResource("AnimationNodeStateMachineTransition_wpojn")]
 
 [node name="Unit" type="CharacterBody2D" groups=["units"]]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(2, 2)
 script = ExtResource("1_63y5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_jvmud")
 debug_color = Color(0, 0.6, 0.701961, 0)

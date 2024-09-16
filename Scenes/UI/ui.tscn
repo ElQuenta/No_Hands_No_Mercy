@@ -1,7 +1,23 @@
-[gd_scene format=3 uid="uid://d2ne1h1quu628"]
+[gd_scene load_steps=3 format=3 uid="uid://b8py6qlpwovh"]
 
-[node name="UI" type="CanvasLayer"]
+[ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_4cjd1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjnf4"]
+bg_color = Color(0.0862745, 0.411765, 0.545098, 0.466667)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0241751, 0.278461, 0.281785, 1)
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_4cjd1")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjnf4")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

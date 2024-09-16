@@ -1,37 +1,31 @@
-[gd_scene load_steps=7 format=4 uid="uid://bl57pjpww8ert"]
+[gd_scene load_steps=6 format=4 uid="uid://bl57pjpww8ert"]
 
-[ext_resource type="Script" path="res://scripts/map.gd" id="1_dgmrd"]
+[ext_resource type="Script" path="res://scripts/world_test.gd" id="1_dgmrd"]
 [ext_resource type="TileSet" uid="uid://8vturtb15uw5" path="res://Assets/TileTrees/World_TileSet.tres" id="1_ky4wk"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="3_miov1"]
-[ext_resource type="PackedScene" uid="uid://b8py6qlpwovh" path="res://Scenes/UI/ui.tscn" id="4_e1ano"]
+[ext_resource type="Script" path="res://scripts/camera_word.gd" id="2_jklde"]
 [ext_resource type="PackedScene" uid="uid://boojiwoq6x3no" path="res://Scenes/Troop/unit.tscn" id="4_kskbl"]
-[ext_resource type="PackedScene" uid="uid://w60qawkpqiyb" path="res://Scenes/tree.tscn" id="6_s5c2r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obkbw"]
+bg_color = Color(0.878431, 0.294118, 0.6, 0.313726)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.691221, 0.0132046, 0.683032, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [node name="World Test" type="Node2D"]
 scale = Vector2(0.7, 0.7)
-
-[node name="Map" type="Node2D" parent="."]
-scale = Vector2(5, 5)
 script = ExtResource("1_dgmrd")
 
-[node name="camera" type="Camera2D" parent="Map"]
-anchor_mode = 0
-ignore_rotation = false
-limit_left = 0
-limit_top = 0
-script = ExtResource("3_miov1")
-
-[node name="ui" parent="Map" instance=ExtResource("4_e1ano")]
-
-[node name="Panel" parent="Map/ui" index="0"]
-offset_right = 0.0
-offset_bottom = 0.0
-
-[node name="Label" parent="Map/ui" index="1"]
-offset_right = 215.0
-offset_bottom = 74.0
+[node name="Map" type="Node2D" parent="."]
+scale = Vector2(2.5, 2.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Map"]
+scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAQAAAAAAABAAAAAQAQAAEAAAABAAEAAAAQAAIAAAABAAEAAAAQAAMAAAABAAAAAwAQAAQAAAABAAAAAwAQAAUAAAABAAAAAAAQAAYAAAABAAAAAAAQAAcAAAABAAAAAAAQAAgAAAABAAAAAQARAAAAAAABAAAAAQARAAEAAAABAAEAAAARAAIAAAABAAEAAAARAAMAAAABAAEAAAARAAQAAAABAAEAAAARAAUAAAABAAAAAAARAAYAAAAAAAAAAAARAAcAAAABAAAAAAARAAgAAAABAAAAAQASAAAAAAAFAAAAAAASAAEAAAAHAAEAAAASAAIAAAAHAAEAAAASAAMAAAAHAAEAAAASAAQAAAABAAEAAAASAAUAAAABAAAAAwASAAYAAAABAAAAAAASAAcAAAAAAAAAAAASAAgAAAABAAAAAQATAP//AAABAAAAAAATAAAAAAABAAAAAQATAAEAAAABAAEAAAATAAIAAAABAAEAAAATAAMAAAAHAAEAAAATAAQAAAABAAEAAAATAAUAAAABAAEAAAATAAYAAAABAAAAAAATAAcAAAABAAAAAAATAAgAAAABAAAAAQAUAP//AAABAAAAAAAUAAAAAAABAAAAAAAUAAEAAAABAAAAAQAUAAIAAAABAAEAAAAUAAMAAAABAAEAAAAUAAQAAAABAAEAAAAUAAUAAAABAAEAAAAUAAYAAAABAAAAAAAUAAcAAAABAAAAAAAUAAgAAAABAAAAAQAVAP//AAABAAAAAwAVAAAAAAABAAAAAAAVAAEAAAABAAAAAAAVAAIAAAABAAAAAAAVAAMAAAABAAAAAAAVAAQAAAABAAAAAAAVAAUAAAABAAAAAAAVAAYAAAABAAAAAAAVAAcAAAABAAAAAAAVAAgAAAABAAAAAgAWAAAAAAABAAAAAwAWAAEAAAABAAAAAAAWAAIAAAAAAAAAAAAWAAMAAAABAAAAAAAWAAQAAAABAAAAAAAWAAUAAAABAAAAAAAWAAYAAAAAAAAAAAAWAAcAAAABAAAAAgATAP7/AAABAAAAAwAPAP//AAABAAAAAAAPAAAAAAABAAAAAAAPAAEAAAABAAAAAwAPAAIAAAABAAAAAwAPAAMAAAABAAAAAAAPAAQAAAABAAAAAAAPAAUAAAABAAAAAQAXAAEAAAABAAAAAwAXAAIAAAABAAAAAwAXAAMAAAABAAAAAwAXAAQAAAABAAAAAwAXAAUAAAABAAAAAwAXAAYAAAABAAAAAgAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAQAAkAAAABAAEAAAARAAkAAAABAAEAAAASAAkAAAABAAEAAAATAAkAAAABAAEAAAAUAAkAAAABAAEAAAAVAAkAAAABAAEAAAAWAAgAAAABAAEAAAAWAAkAAAABAAEAAAAXAAcAAAABAAEAAAAXAAgAAAABAAEAAAAXAAkAAAABAAEAAAAYAP//AAABAAEAAAAYAAAAAAABAAEAAAAYAAEAAAABAAEAAAAYAAIAAAABAAEAAAAYAAMAAAABAAEAAAAYAAQAAAABAAEAAAAYAAUAAAABAAEAAAAYAAYAAAABAAEAAAAYAAcAAAABAAEAAAAYAAgAAAABAAEAAAAYAAkAAAABAAEAAAAXAP//AAABAAEAAAAXAP7/AAABAAEAAAAWAP7/AAABAAEAAAAVAP7/AAABAAEAAAAUAP7/AAABAAEAAAAWAP//AAABAAEAAAAYAP7/AAABAAEAAAAXAAAAAAABAAEAAAAPAP7/AAABAAAAAAAQAP//AAAAAAAABAAQAP7/AAAAAAAABAARAP7/AAAAAAAABAARAP//AAAAAAAABAASAP//AAAAAAAABAASAP7/AAAAAAAABAA=")
 tile_set = ExtResource("1_ky4wk")
 
@@ -39,20 +33,20 @@ tile_set = ExtResource("1_ky4wk")
 tile_map_data = PackedByteArray("AAATAP//AAAKAAMAAAAQAAYAAAAKAAIAAAARAAYAAAAKAAIAAAAWAP7/AAAIAAIAAAAVAAMAAAAIAAIAAAARAP7/AAABAAEAAgAPAP7/AAABAAEAAQAQAP7/AAABAAEAAQARAP3/AAABAAEAAwAPAP3/AAABAAAAAQAQAP3/AAABAAAAAgA=")
 tile_set = ExtResource("1_ky4wk")
 
-[node name="Units" type="Node2D" parent="Map"]
-scale = Vector2(0.2, 0.2)
+[node name="UI" type="CanvasLayer" parent="Map"]
 
-[node name="Unit2" parent="Map/Units" instance=ExtResource("4_kskbl")]
-position = Vector2(324.857, 314.571)
+[node name="Panel" type="Panel" parent="Map/UI"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_obkbw")
+
+[node name="Units" type="Node2D" parent="Map"]
+scale = Vector2(0.4, 0.4)
 
 [node name="Unit" parent="Map/Units" instance=ExtResource("4_kskbl")]
-position = Vector2(420.857, 312.857)
+position = Vector2(635.715, 695.715)
+scale = Vector2(3, 3)
 
-[node name="Objects" type="Node2D" parent="Map"]
-position = Vector2(111.429, 89.7143)
-scale = Vector2(0.18, 0.18)
-
-[node name="tree" parent="Map/Objects" instance=ExtResource("6_s5c2r")]
-scale = Vector2(1, 1)
-
-[editable path="Map/ui"]
+[node name="CameraWord" type="Camera2D" parent="Map"]
+scale = Vector2(0.4, 0.4)
+limit_left = 0
+limit_top = 0
+script = ExtResource("2_jklde")
